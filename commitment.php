@@ -1,6 +1,6 @@
 <?php
 // commitment.php
-$buzz_adverbs = [];
+$buzz_adverbs = ["probably", "almost", "nearly", "actually", "quickly", "suddenly"];
 $buzz_adjectives = ["admin", "ldap", "", "all", "additional", "more", "new",
 	"extra"];
 $buzz_verbs = ["added", "implemented", "redesigned", "developed", "fixed",
@@ -17,7 +17,10 @@ function generate_arjun_commit_name() {
     $verb = $buzz_verbs[mt_rand(0, sizeof($buzz_verbs) - 1)];
     $noun = $buzz_nouns[mt_rand(0, sizeof($buzz_nouns) - 1)];
     $adjective = $buzz_adjectives[mt_rand(0, sizeof($buzz_adjectives) - 1)];
-    $adverb = $buzz_adverbs[@mt_rand(0, sizeof($buzz_adverbs) - 1)];
+
+	if (mt_rand(0, 5) == 1) {
+    	$adverb = $buzz_adverbs[mt_rand(0, sizeof($buzz_adverbs) - 1)];
+	}
 
 	if ($adverb) $verb = $adverb . " " . $verb;
 	if ($adjective) $noun = $adjective . " " . $noun;
