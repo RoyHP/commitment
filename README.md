@@ -1,7 +1,19 @@
 # commitment
-A "natural language" generator to increase your productivity by doing away with having to write those pesky commit messages.
+A "natural language" generator to increase your productivity by doing away with having to write those pesky commit messages. Created by experts, serious experts.
 
 ### Usage
+#### Git Alias
+```bash
+alias commit='git commit -m "`./commitment.php`"'
+commit
+```
+
+#### Git
+```bash
+git commit -m "`./commitment.php`"
+```
+
+#### Manual
 ```bash
 $ ./commitment.php 10
 added additional portal and buttons
