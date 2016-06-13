@@ -1,7 +1,8 @@
 #!/usr/bin/php
 <?php
 // commitment.php
-$buzz_adverbs = ["probably", "almost", "nearly", "actually", "quickly", "suddenly"];
+$buzz_adverbs = ["probably", "almost", "nearly", "actually", "quickly", "suddenly",
+	"definitely"];
 $buzz_adjectives = ["admin", "ldap", "", "all", "additional", "more", "new",
 	"extra"];
 $buzz_verbs = ["added", "implemented", "redesigned", "developed", "fixed",

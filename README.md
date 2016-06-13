@@ -15,8 +15,11 @@ git commit -m "`./commitment.php`"
 
 #### Manual
 ```bash
+$ ./commitment.php
+probably updated additional buttons
+
 $ ./commitment.php 10
-added additional portal and buttons
+actually implemented new buttons and api calls
 fixed more buttons
 updated all page
 redesigned additional service
