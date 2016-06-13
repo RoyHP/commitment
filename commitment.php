@@ -1,12 +1,12 @@
 <?php
-
+// commitment.php
 $buzz_adverbs = [];
 $buzz_adjectives = ["admin", "ldap", "", "all", "additional", "more", "new",
-  "extra"];
+	"extra"];
 $buzz_verbs = ["added", "implemented", "redesigned", "developed", "fixed",
-  "updated", "refactored"];
+	"updated", "refactored"];
 $buzz_nouns = ["portal", "buttons", "button", "page", "service", "api calls",
-  "class", "function", "view"];
+	"class", "function", "view"];
 
 function generate_arjun_commit_name() {
     global $buzz_adverbs;
@@ -19,27 +19,31 @@ function generate_arjun_commit_name() {
     $adjective = $buzz_adjectives[mt_rand(0, sizeof($buzz_adjectives) - 1)];
     $adverb = $buzz_adverbs[@mt_rand(0, sizeof($buzz_adverbs) - 1)];
 
-    if ($adverb) $verb = $adverb . " " . $verb;
-    if ($adjective) $noun = $adjective . " " . $noun;
+	if ($adverb) $verb = $adverb . " " . $verb;
+	if ($adjective) $noun = $adjective . " " . $noun;
 
-    $result = $verb . ' ' . $noun;
+	$result = $verb . ' ' . $noun;
 
-    if (mt_rand(0, 1)) {
-        $other_noun = $buzz_nouns[mt_rand(0, sizeof($buzz_nouns) - 1)];
-        $other_adjective = $buzz_adjectives[mt_rand(0, sizeof($buzz_adjectives) - 1)];
-        $result .= " and " . $other_adjective . " " . $other_noun;
-    }
+	if (mt_rand(0, 1)) {
+		$other_noun = $buzz_nouns[mt_rand(0, sizeof($buzz_nouns) - 1)];
+		$other_adjective = $buzz_adjectives[mt_rand(0, sizeof($buzz_adjectives) - 1)];
+		$result .= " and " . $other_adjective . " " . $other_noun;
+	}
 
     // Remove any doubled-up spaces
-    for ($i = 0; $i < strlen($result); $i++) {
-      if ($result[$i] == ' ' && $result[$i + 1] == ' ') {
-        $result[$i] = '';
-      }
-    }
+	for ($i = 0; $i < strlen($result); $i++) {
+		if ($result[$i] == ' ' && $result[$i + 1] == ' ') {
+			$result[$i] = '';
+		}
+	}
 
     return $result;
 }
 
+if (!isset($argv[1])) {
+	$argv[1] = 1;
+}
+
 for ($i = 0; $i < $argv[1]; $i++) {
-    echo generate_arjun_commit_name() . PHP_EOL;
+	echo generate_arjun_commit_name() . PHP_EOL;
 }
