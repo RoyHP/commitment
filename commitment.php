@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 // commitment.php
 $buzz_adverbs = ["probably", "almost", "nearly", "actually", "quickly", "suddenly"];
@@ -6,7 +7,7 @@ $buzz_adjectives = ["admin", "ldap", "", "all", "additional", "more", "new",
 $buzz_verbs = ["added", "implemented", "redesigned", "developed", "fixed",
 	"updated", "refactored"];
 $buzz_nouns = ["portal", "buttons", "button", "page", "service", "api calls",
-	"class", "function", "view"];
+	"classes", "functions", "view"];
 
 function generate_arjun_commit_name() {
     global $buzz_adverbs;
