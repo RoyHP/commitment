@@ -10,7 +10,7 @@ $buzz_verbs = ["added", "implemented", "redesigned", "developed", "fixed",
 $buzz_nouns = ["portal", "buttons", "button", "page", "service", "api calls",
 	"classes", "functions", "view"];
 
-function generate_arjun_commit_name() {
+function generate_commit_name() {
     global $buzz_adverbs;
     global $buzz_adjectives;
     global $buzz_verbs;
@@ -50,5 +50,5 @@ if (!isset($argv[1])) {
 }
 
 for ($i = 0; $i < $argv[1]; $i++) {
-	echo generate_arjun_commit_name() . PHP_EOL;
+	echo generate_commit_name() . PHP_EOL;
 }
